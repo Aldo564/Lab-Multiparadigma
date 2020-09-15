@@ -22,7 +22,12 @@ namespace Prueba.Model
             this.fecha = fecha;
         }
 
-
-
+        // Función que añade un archivo (o varios) desde el Work Space al Index.
+        // Entrada: no tiene.
+        // Salida: no tiene.
+        internal void gitAdd(Repositorio repo)
+        {
+            
+        }
     }
 }

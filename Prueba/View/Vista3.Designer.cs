@@ -1,4 +1,6 @@
-﻿namespace Prueba.View
+﻿using System;
+
+namespace Prueba.View
 {
     partial class Vista3
     {
@@ -55,6 +57,7 @@
             this.Add.TabIndex = 2;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = false;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // Commit
             // 
@@ -231,6 +234,8 @@
             this.PerformLayout();
 
         }
+
+
 
         #endregion
 

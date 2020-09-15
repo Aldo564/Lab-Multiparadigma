@@ -75,6 +75,12 @@
     <Compile Include="View\Vista3.Designer.cs">
       <DependentUpon>Vista3.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VistaAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaAdd.Designer.cs">
+      <DependentUpon>VistaAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VistaNuevoArchivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Vista3.resx">
       <DependentUpon>Vista3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaAdd.resx">
+      <DependentUpon>VistaAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VistaNuevoArchivo.resx">
       <DependentUpon>VistaNuevoArchivo.cs</DependentUpon>

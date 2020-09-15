@@ -13,7 +13,6 @@ namespace Prueba.View
 {
     public partial class Vista3 : Form
     {
-
         private Repositorio repo;
         public Vista3()
         {
@@ -52,6 +51,22 @@ namespace Prueba.View
             this.Hide();
         }
 
-        
+        private void Add_Click(object sender, EventArgs e)
+        {
+
+            VistaAdd vista = new VistaAdd();
+
+            if (Repo.zona.workSpace.archivos == null) 
+            {
+                MessageBox.Show("Porfavor agrege archivos al Work Space antes de añadirlos a Index");
+            }
+            else
+            {
+                
+                vista.Show();
+                vista.Repo = this.repo;
+            }
+            
+        }
     }
 }

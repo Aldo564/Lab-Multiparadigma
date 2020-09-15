@@ -28,8 +28,6 @@ namespace Prueba.Model
             else 
             {
                 repo = entrada_Datos(nombreRepo, nombreAutor);
-
-                
             }
 
             List<Archivo> archivos_ws = null;
