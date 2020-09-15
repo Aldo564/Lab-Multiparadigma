@@ -40,6 +40,8 @@
             this.NombreRepo = new System.Windows.Forms.Label();
             this.LabelAutor = new System.Windows.Forms.Label();
             this.NombreAutor = new System.Windows.Forms.Label();
+            this.Salir = new System.Windows.Forms.Button();
+            this.NuevoArchivo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Add
@@ -47,7 +49,7 @@
             this.Add.BackColor = System.Drawing.SystemColors.Control;
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.Add.Location = new System.Drawing.Point(134, 352);
+            this.Add.Location = new System.Drawing.Point(125, 151);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(136, 46);
             this.Add.TabIndex = 2;
@@ -59,7 +61,7 @@
             this.Commit.BackColor = System.Drawing.SystemColors.Control;
             this.Commit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Commit.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.Commit.Location = new System.Drawing.Point(337, 352);
+            this.Commit.Location = new System.Drawing.Point(328, 151);
             this.Commit.Name = "Commit";
             this.Commit.Size = new System.Drawing.Size(136, 46);
             this.Commit.TabIndex = 3;
@@ -71,7 +73,7 @@
             this.Push.BackColor = System.Drawing.SystemColors.Control;
             this.Push.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Push.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.Push.Location = new System.Drawing.Point(540, 352);
+            this.Push.Location = new System.Drawing.Point(531, 151);
             this.Push.Name = "Push";
             this.Push.Size = new System.Drawing.Size(136, 46);
             this.Push.TabIndex = 4;
@@ -83,7 +85,7 @@
             this.Pull.BackColor = System.Drawing.SystemColors.Control;
             this.Pull.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pull.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.Pull.Location = new System.Drawing.Point(337, 158);
+            this.Pull.Location = new System.Drawing.Point(328, 339);
             this.Pull.Name = "Pull";
             this.Pull.Size = new System.Drawing.Size(136, 46);
             this.Pull.TabIndex = 5;
@@ -176,12 +178,40 @@
             this.NombreAutor.Size = new System.Drawing.Size(0, 25);
             this.NombreAutor.TabIndex = 13;
             // 
+            // Salir
+            // 
+            this.Salir.BackColor = System.Drawing.SystemColors.Control;
+            this.Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Salir.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Salir.Location = new System.Drawing.Point(652, 12);
+            this.Salir.Name = "Salir";
+            this.Salir.Size = new System.Drawing.Size(136, 46);
+            this.Salir.TabIndex = 14;
+            this.Salir.Text = "Salir";
+            this.Salir.UseVisualStyleBackColor = false;
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
+            // NuevoArchivo
+            // 
+            this.NuevoArchivo.BackColor = System.Drawing.SystemColors.Control;
+            this.NuevoArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoArchivo.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.NuevoArchivo.Location = new System.Drawing.Point(29, 339);
+            this.NuevoArchivo.Name = "NuevoArchivo";
+            this.NuevoArchivo.Size = new System.Drawing.Size(136, 46);
+            this.NuevoArchivo.TabIndex = 15;
+            this.NuevoArchivo.Text = "Nuevo Archivo";
+            this.NuevoArchivo.UseVisualStyleBackColor = false;
+            this.NuevoArchivo.Click += new System.EventHandler(this.NuevoArchivo_Click);
+            // 
             // Vista3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NuevoArchivo);
+            this.Controls.Add(this.Salir);
             this.Controls.Add(this.NombreAutor);
             this.Controls.Add(this.LabelAutor);
             this.Controls.Add(this.NombreRepo);
@@ -196,6 +226,7 @@
             this.Controls.Add(this.Add);
             this.Name = "Vista3";
             this.Text = "Vista3";
+            this.Load += new System.EventHandler(this.Vista3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +246,7 @@
         private System.Windows.Forms.Label NombreRepo;
         private System.Windows.Forms.Label LabelAutor;
         private System.Windows.Forms.Label NombreAutor;
+        private System.Windows.Forms.Button Salir;
+        private System.Windows.Forms.Button NuevoArchivo;
     }
 }

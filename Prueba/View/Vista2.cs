@@ -20,6 +20,17 @@ namespace Prueba.View
             InitializeComponent();
         }
 
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
+
         private void Atras_Click(object sender, EventArgs e)
         {
             Vista1 vista = new Vista1();
@@ -33,11 +44,14 @@ namespace Prueba.View
             Main main = new Main();
             Repositorio repo = main.gitInit(NombreRepo.Text, NombreAutor.Text);
 
-            Vista3 vista = new Vista3();
-            vista.repo = repo;
+            if(!(repo.nombre.Equals("null") && repo.autor.Equals("null"))) 
+            {
+                Vista3 vista = new Vista3();
+                vista.Repo = repo;
 
-            vista.Show();
-            this.Hide();
+                vista.Show();
+                this.Hide();
+            }
 
 
         }

@@ -75,6 +75,12 @@
     <Compile Include="View\Vista3.Designer.cs">
       <DependentUpon>Vista3.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VistaNuevoArchivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaNuevoArchivo.Designer.cs">
+      <DependentUpon>VistaNuevoArchivo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Vista3.resx">
       <DependentUpon>Vista3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaNuevoArchivo.resx">
+      <DependentUpon>VistaNuevoArchivo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
