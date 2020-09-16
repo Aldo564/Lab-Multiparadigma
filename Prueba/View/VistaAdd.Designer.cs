@@ -44,6 +44,7 @@
             this.ArchivosNoAgregados.Name = "ArchivosNoAgregados";
             this.ArchivosNoAgregados.Size = new System.Drawing.Size(220, 319);
             this.ArchivosNoAgregados.TabIndex = 0;
+            this.ArchivosNoAgregados.SelectedIndexChanged += new System.EventHandler(this.ArchivosNoAgregados_SelectedIndexChanged);
             // 
             // Label1
             // 
@@ -73,6 +74,7 @@
             this.ArchivosAgregados.Name = "ArchivosAgregados";
             this.ArchivosAgregados.Size = new System.Drawing.Size(220, 319);
             this.ArchivosAgregados.TabIndex = 3;
+            this.ArchivosAgregados.SelectedIndexChanged += new System.EventHandler(this.ArchivosAgregados_SelectedIndexChanged);
             // 
             // Aceptar
             // 
@@ -85,6 +87,7 @@
             this.Aceptar.TabIndex = 8;
             this.Aceptar.Text = "Aceptar";
             this.Aceptar.UseVisualStyleBackColor = false;
+            this.Aceptar.Click += new System.EventHandler(this.Aceptar_Click);
             // 
             // Salir
             // 

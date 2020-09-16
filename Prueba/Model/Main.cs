@@ -30,15 +30,15 @@ namespace Prueba.Model
                 repo = entrada_Datos(nombreRepo, nombreAutor);
             }
 
-            List<Archivo> archivos_ws = null;
-            List<Archivo> archivos_i = null;
-            List<Archivo> archivos_commit = null;
+            List<Archivo> archivos_ws = new List<Archivo>();
+            List<Archivo> archivos_i = new List<Archivo>();
+            List<Archivo> archivos_commit = new List<Archivo>();
 
-            List<Commit> commits_lr = null;
-            List<Commit> commits_rr = null;
-            List<String> strings = null;
+            List<Commit> commits_lr = new List<Commit>();
+            List<Commit> commits_rr = new List<Commit>();
+            List<String> strings = new List<String>();
             String vacio = "";
-            Commit commit = new Commit(vacio, vacio, vacio, strings, archivos_commit);
+            Commit commit = new Commit(vacio, vacio, vacio, vacio, strings, archivos_commit);
 
             WorkSpace ws = new WorkSpace(archivos_ws);
             Index i = new Index(archivos_i, vacio, vacio, vacio, commit);

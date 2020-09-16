@@ -87,6 +87,24 @@
     <Compile Include="View\VistaNuevoArchivo.Designer.cs">
       <DependentUpon>VistaNuevoArchivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VistaStatusI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaStatusI.Designer.cs">
+      <DependentUpon>VistaStatusI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VistaStatusLR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaStatusLR.Designer.cs">
+      <DependentUpon>VistaStatusLR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VistaStatusWS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaStatusWS.Designer.cs">
+      <DependentUpon>VistaStatusWS.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -110,6 +128,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VistaNuevoArchivo.resx">
       <DependentUpon>VistaNuevoArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaStatusI.resx">
+      <DependentUpon>VistaStatusI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaStatusLR.resx">
+      <DependentUpon>VistaStatusLR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaStatusWS.resx">
+      <DependentUpon>VistaStatusWS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

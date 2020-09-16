@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Prueba.Model
 {
@@ -25,9 +26,35 @@ namespace Prueba.Model
         // Función que añade un archivo (o varios) desde el Work Space al Index.
         // Entrada: no tiene.
         // Salida: no tiene.
-        internal void gitAdd(Repositorio repo)
+        internal Repositorio gitAdd(Repositorio repo, List<Object> items)
         {
-            
+            foreach(Object item in items)
+            {
+                foreach (Archivo archivo in repo.zona.workSpace.archivos) 
+                {
+                    if (archivo.nombre.Equals(item.ToString()))
+                    {
+                        repo.zona.index.archivos.Add(archivo);
+                    }
+                }
+            }
+
+            return repo;
+        }
+
+        internal Repositorio CrearArchivo(Repositorio repo, String nombre, String contenido)
+        {
+            DateTime date = DateTime.Now;
+            String format = "G";
+            String fecha = date.ToString(format);
+
+            String nombreFinal = nombre + ".txt";
+
+            Archivo archivo = new Archivo(nombreFinal, fecha, contenido);
+
+            repo.zona.workSpace.archivos.Add(archivo);
+
+            return repo;
         }
     }
 }

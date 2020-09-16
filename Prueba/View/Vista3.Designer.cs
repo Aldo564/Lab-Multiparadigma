@@ -106,6 +106,7 @@ namespace Prueba.View
             this.StatusWS.TabIndex = 6;
             this.StatusWS.Text = "Estado Work Space";
             this.StatusWS.UseVisualStyleBackColor = false;
+            this.StatusWS.Click += new System.EventHandler(this.StatusWS_Click);
             // 
             // StatusI
             // 
@@ -118,6 +119,7 @@ namespace Prueba.View
             this.StatusI.TabIndex = 7;
             this.StatusI.Text = "Estado Index";
             this.StatusI.UseVisualStyleBackColor = false;
+            this.StatusI.Click += new System.EventHandler(this.StatusI_Click);
             // 
             // StatusLR
             // 
@@ -130,6 +132,7 @@ namespace Prueba.View
             this.StatusLR.TabIndex = 8;
             this.StatusLR.Text = "Estado Local Repository";
             this.StatusLR.UseVisualStyleBackColor = false;
+            this.StatusLR.Click += new System.EventHandler(this.StatusLR_Click);
             // 
             // StatusRR
             // 

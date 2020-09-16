@@ -13,7 +13,10 @@ namespace Prueba.View
 {
     public partial class Vista3 : Form
     {
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+
         private Repositorio repo;
+        
         public Vista3()
         {
             InitializeComponent();
@@ -24,8 +27,7 @@ namespace Prueba.View
             NombreAutor.Text = repo.autor;
             NombreRepo.Text = repo.nombre;
         }
-
-        private const int CP_NOCLOSE_BUTTON = 0x200;
+        
         protected override CreateParams CreateParams
         {
             get
@@ -42,6 +44,8 @@ namespace Prueba.View
         {
             VistaNuevoArchivo archivo = new VistaNuevoArchivo();
             archivo.Show();
+            archivo.Repo = this.repo;
+            this.Hide();
         }
 
         private void Salir_Click(object sender, EventArgs e)
@@ -56,17 +60,39 @@ namespace Prueba.View
 
             VistaAdd vista = new VistaAdd();
 
-            if (Repo.zona.workSpace.archivos == null) 
+            if (Repo.zona.workSpace.archivos.Count == 0) 
             {
                 MessageBox.Show("Porfavor agrege archivos al Work Space antes de añadirlos a Index");
             }
             else
             {
                 
+                vista.Repo = repo;
                 vista.Show();
-                vista.Repo = this.repo;
+                this.Hide();
             }
             
+        }
+
+        private void StatusWS_Click(object sender, EventArgs e)
+        {
+            VistaStatusWS vista = new VistaStatusWS();
+            vista.Archivos = this.repo.zona.workSpace.archivos;
+            vista.Show();
+        }
+
+        private void StatusI_Click(object sender, EventArgs e)
+        {
+            VistaStatusI vista = new VistaStatusI();
+            vista.Archivos = this.repo.zona.index.archivos;
+            vista.Show();
+        }
+
+        private void StatusLR_Click(object sender, EventArgs e)
+        {
+            VistaStatusLR vista = new VistaStatusLR();
+            vista.Commits = this.repo.zona.localRepo.commits;
+            vista.Show();
         }
     }
 }

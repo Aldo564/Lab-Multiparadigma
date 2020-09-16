@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.LabelNombreArchivo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NombreArchivo = new System.Windows.Forms.TextBox();
             this.LabelContenido = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NombreContenido = new System.Windows.Forms.TextBox();
             this.crear = new System.Windows.Forms.Button();
             this.Salir = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -46,13 +46,13 @@
             this.LabelNombreArchivo.TabIndex = 0;
             this.LabelNombreArchivo.Text = "Ingrese nombre del archivo (sin extension)";
             // 
-            // textBox1
+            // NombreArchivo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(17, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(375, 30);
-            this.textBox1.TabIndex = 1;
+            this.NombreArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreArchivo.Location = new System.Drawing.Point(17, 56);
+            this.NombreArchivo.Name = "NombreArchivo";
+            this.NombreArchivo.Size = new System.Drawing.Size(375, 30);
+            this.NombreArchivo.TabIndex = 1;
             // 
             // LabelContenido
             // 
@@ -64,14 +64,14 @@
             this.LabelContenido.TabIndex = 2;
             this.LabelContenido.Text = "Ingrese el contenido del archivo";
             // 
-            // textBox2
+            // NombreContenido
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(17, 140);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(375, 380);
-            this.textBox2.TabIndex = 3;
+            this.NombreContenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreContenido.Location = new System.Drawing.Point(17, 140);
+            this.NombreContenido.Multiline = true;
+            this.NombreContenido.Name = "NombreContenido";
+            this.NombreContenido.Size = new System.Drawing.Size(375, 380);
+            this.NombreContenido.TabIndex = 3;
             // 
             // crear
             // 
@@ -84,6 +84,7 @@
             this.crear.TabIndex = 6;
             this.crear.Text = "Crear";
             this.crear.UseVisualStyleBackColor = false;
+            this.crear.Click += new System.EventHandler(this.crear_Click);
             // 
             // Salir
             // 
@@ -106,9 +107,9 @@
             this.ClientSize = new System.Drawing.Size(407, 582);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.crear);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.NombreContenido);
             this.Controls.Add(this.LabelContenido);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NombreArchivo);
             this.Controls.Add(this.LabelNombreArchivo);
             this.Name = "VistaNuevoArchivo";
             this.Text = "VistaNuevoArchivo";
@@ -120,9 +121,9 @@
         #endregion
 
         private System.Windows.Forms.Label LabelNombreArchivo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NombreArchivo;
         private System.Windows.Forms.Label LabelContenido;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NombreContenido;
         private System.Windows.Forms.Button crear;
         private System.Windows.Forms.Button Salir;
     }
