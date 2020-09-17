@@ -75,8 +75,9 @@ namespace Prueba.Model
             Commit commit = new Commit(nombre, autor, fecha, desc, cambios, archivos);
 
             repo.zona.index.commit = commit;
+            repo.zona.index.archivos.Clear();
 
-            repo.zona.localRepo.commits.Add(repo.zona.index.commit);
+            repo.zona.localRepo.commits.Add(commit);
             repo.zona.remoteRepo.estado_actualizacion = false;
 
             return repo;

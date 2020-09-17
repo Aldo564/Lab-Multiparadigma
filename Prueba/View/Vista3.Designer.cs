@@ -96,6 +96,7 @@ namespace Prueba.View
             this.Pull.TabIndex = 5;
             this.Pull.Text = "Pull";
             this.Pull.UseVisualStyleBackColor = false;
+            this.Pull.Click += new System.EventHandler(this.Pull_Click);
             // 
             // StatusWS
             // 

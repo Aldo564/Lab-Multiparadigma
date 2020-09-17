@@ -83,6 +83,31 @@ namespace Prueba.View
             this.Hide();
         }
 
+        private void Push_Click(object sender, EventArgs e)
+        {
+            repo.zona.remoteRepo.commits.Clear();
+            foreach (Commit commit in repo.zona.localRepo.commits) 
+            {
+                repo.zona.remoteRepo.commits.Add(commit);
+            }
+            repo.zona.remoteRepo.estado_actualizacion = true;
+
+            MessageBox.Show("Proceso exitoso");
+        }
+
+        private void Pull_Click(object sender, EventArgs e)
+        {
+            List<Archivo> archivos_RR = repo.zona.remoteRepo.commits[repo.zona.remoteRepo.commits.Count - 1].archivos;
+            List<Archivo> archivos_WS = repo.zona.workSpace.archivos;
+
+            IEnumerable<Archivo> aux = archivos_RR.Union(archivos_WS);
+            List<Archivo> union = aux.ToList();
+
+            repo.zona.workSpace.archivos = union;
+
+            MessageBox.Show("Proceso exitoso");
+        }
+
         private void StatusWS_Click(object sender, EventArgs e)
         {
             VistaStatusWS vista = new VistaStatusWS();
@@ -104,12 +129,6 @@ namespace Prueba.View
             vista.Show();
         }
 
-        private void Push_Click(object sender, EventArgs e)
-        {
-            repo.zona.remoteRepo.commits = repo.zona.localRepo.commits;
-            repo.zona.remoteRepo.estado_actualizacion = true;
-        }
-
         private void StatusRR_Click(object sender, EventArgs e)
         {
             VistaStatusRR vista = new VistaStatusRR();
@@ -118,5 +137,6 @@ namespace Prueba.View
 
             vista.Show();
         }
+
     }
 }
