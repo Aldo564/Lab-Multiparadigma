@@ -200,6 +200,10 @@ namespace Prueba.Model
             return cambios;
         }
 
+
+        // Funcion que busca los archivos correspondientes a los Items entregados en el Index.
+        // Entrada: repo de tipo Repositorio y un List de tipo Object.
+        // Salida: Un List de tipo Archivo con los archivos que coinciden.
         private List<Archivo> rescatar_Archivos(Repositorio repo, List<object> items)
         {
             List<Archivo> archivos = new List<Archivo>();
