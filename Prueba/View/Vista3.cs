@@ -57,16 +57,14 @@ namespace Prueba.View
 
         private void Add_Click(object sender, EventArgs e)
         {
-
-            VistaAdd vista = new VistaAdd();
-
             if (Repo.zona.workSpace.archivos.Count == 0) 
             {
                 MessageBox.Show("Porfavor agrege archivos al Work Space antes de añadirlos a Index");
             }
             else
             {
-                
+                VistaAdd vista = new VistaAdd();
+
                 vista.Repo = repo;
                 vista.Show();
                 this.Hide();
@@ -76,36 +74,60 @@ namespace Prueba.View
 
         private void Commit_Click(object sender, EventArgs e)
         {
-            VistaCommit1 vista = new VistaCommit1();
-            vista.Repo = repo;
+            if (repo.zona.index.archivos.Count != 0) 
+            {
+                VistaCommit1 vista = new VistaCommit1();
+                vista.Repo = repo;
 
-            vista.Show();
-            this.Hide();
+                vista.Show();
+                this.Hide();
+            }
+            else 
+            {
+                MessageBox.Show("No existen Archivos en el Index");
+            }
+            
         }
 
         private void Push_Click(object sender, EventArgs e)
         {
-            repo.zona.remoteRepo.commits.Clear();
-            foreach (Commit commit in repo.zona.localRepo.commits) 
+            if (repo.zona.localRepo.commits.Count != 0) 
             {
-                repo.zona.remoteRepo.commits.Add(commit);
-            }
-            repo.zona.remoteRepo.estado_actualizacion = true;
+                repo.zona.remoteRepo.commits.Clear();
+                foreach (Commit commit in repo.zona.localRepo.commits)
+                {
+                    repo.zona.remoteRepo.commits.Add(commit);
+                }
+                repo.zona.remoteRepo.estado_actualizacion = true;
 
-            MessageBox.Show("Proceso exitoso");
+                MessageBox.Show("Proceso exitoso");
+            }
+            else
+            {
+                MessageBox.Show("No existen Commits en el Local Repository");
+            }
+
         }
 
         private void Pull_Click(object sender, EventArgs e)
         {
-            List<Archivo> archivos_RR = repo.zona.remoteRepo.commits[repo.zona.remoteRepo.commits.Count - 1].archivos;
-            List<Archivo> archivos_WS = repo.zona.workSpace.archivos;
+            if (repo.zona.remoteRepo.commits.Count != 0) 
+            {
+                List<Archivo> archivos_RR = repo.zona.remoteRepo.commits[repo.zona.remoteRepo.commits.Count - 1].archivos;
+                List<Archivo> archivos_WS = repo.zona.workSpace.archivos;
 
-            IEnumerable<Archivo> aux = archivos_RR.Union(archivos_WS);
-            List<Archivo> union = aux.ToList();
+                IEnumerable<Archivo> aux = archivos_RR.Union(archivos_WS);
+                List<Archivo> union = aux.ToList();
 
-            repo.zona.workSpace.archivos = union;
+                repo.zona.workSpace.archivos = union;
 
-            MessageBox.Show("Proceso exitoso");
+                MessageBox.Show("Proceso exitoso");
+            }
+            else 
+            {
+                MessageBox.Show("No existen Commits en el Remote Repository");
+            }
+            
         }
 
         private void StatusWS_Click(object sender, EventArgs e)
