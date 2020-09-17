@@ -35,11 +35,7 @@ namespace Prueba.View
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            Vista3 vista = new Vista3();
-            vista.Repo = repo;
-
-            vista.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void crear_Click(object sender, EventArgs e)

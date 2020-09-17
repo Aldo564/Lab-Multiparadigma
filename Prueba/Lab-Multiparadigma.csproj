@@ -81,6 +81,18 @@
     <Compile Include="View\VistaAdd.Designer.cs">
       <DependentUpon>VistaAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VistaCommit1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaCommit1.Designer.cs">
+      <DependentUpon>VistaCommit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VistaCommit2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaCommit2.Designer.cs">
+      <DependentUpon>VistaCommit2.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VistaNuevoArchivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +110,12 @@
     </Compile>
     <Compile Include="View\VistaStatusLR.Designer.cs">
       <DependentUpon>VistaStatusLR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VistaStatusRR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VistaStatusRR.Designer.cs">
+      <DependentUpon>VistaStatusRR.cs</DependentUpon>
     </Compile>
     <Compile Include="View\VistaStatusWS.cs">
       <SubType>Form</SubType>
@@ -126,6 +144,12 @@
     <EmbeddedResource Include="View\VistaAdd.resx">
       <DependentUpon>VistaAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaCommit1.resx">
+      <DependentUpon>VistaCommit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaCommit2.resx">
+      <DependentUpon>VistaCommit2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\VistaNuevoArchivo.resx">
       <DependentUpon>VistaNuevoArchivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VistaStatusLR.resx">
       <DependentUpon>VistaStatusLR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VistaStatusRR.resx">
+      <DependentUpon>VistaStatusRR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VistaStatusWS.resx">
       <DependentUpon>VistaStatusWS.cs</DependentUpon>

@@ -11,11 +11,13 @@ using System.Windows.Forms;
 
 namespace Prueba.View
 {
-    public partial class VistaStatusLR : Form
+    public partial class VistaStatusRR : Form
     {
-        private List<Commit> commits = new List<Commit>();
 
-        public VistaStatusLR()
+        private List<Commit> commits = new List<Commit>();
+        public Boolean estado = false;
+
+        public VistaStatusRR()
         {
             InitializeComponent();
         }
@@ -34,12 +36,22 @@ namespace Prueba.View
 
         internal List<Commit> Commits { get => commits; set => commits = value; }
 
-        private void VistaStatusLR_Load(object sender, EventArgs e)
+        private void VistaStatusRR_Load(object sender, EventArgs e)
         {
             foreach (Commit element in Commits)
             {
-                CommitsLR.Items.Add(element.nombre);
+                CommitsRR.Items.Add(element.nombre);
             }
+
+            if (estado) 
+            {
+                Estado.Text = "Actualizado";
+            }
+            else 
+            {
+                Estado.Text = "No Actualizado";
+            }
+
         }
 
         private void Atras_Click(object sender, EventArgs e)
@@ -47,11 +59,11 @@ namespace Prueba.View
             this.Close();
         }
 
-        private void CommitsLR_SelectedIndexChanged(object sender, EventArgs e)
+        private void CommitsRR_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Object item_Marcado = CommitsLR.SelectedItem;
+            Object item_Marcado = CommitsRR.SelectedItem;
 
-            if (item_Marcado != null) 
+            if (item_Marcado != null)
             {
                 List<Object> items = new List<Object>();
                 foreach (Object item in ArchivosCommit.Items)
@@ -75,10 +87,6 @@ namespace Prueba.View
                     }
                 }
             }
-            
-
-            
-
         }
     }
 }

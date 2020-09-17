@@ -74,6 +74,15 @@ namespace Prueba.View
             
         }
 
+        private void Commit_Click(object sender, EventArgs e)
+        {
+            VistaCommit1 vista = new VistaCommit1();
+            vista.Repo = repo;
+
+            vista.Show();
+            this.Hide();
+        }
+
         private void StatusWS_Click(object sender, EventArgs e)
         {
             VistaStatusWS vista = new VistaStatusWS();
@@ -92,6 +101,21 @@ namespace Prueba.View
         {
             VistaStatusLR vista = new VistaStatusLR();
             vista.Commits = this.repo.zona.localRepo.commits;
+            vista.Show();
+        }
+
+        private void Push_Click(object sender, EventArgs e)
+        {
+            repo.zona.remoteRepo.commits = repo.zona.localRepo.commits;
+            repo.zona.remoteRepo.estado_actualizacion = true;
+        }
+
+        private void StatusRR_Click(object sender, EventArgs e)
+        {
+            VistaStatusRR vista = new VistaStatusRR();
+            vista.Commits = repo.zona.remoteRepo.commits;
+            vista.estado = repo.zona.remoteRepo.estado_actualizacion;
+
             vista.Show();
         }
     }

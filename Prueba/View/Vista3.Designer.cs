@@ -70,6 +70,7 @@ namespace Prueba.View
             this.Commit.TabIndex = 3;
             this.Commit.Text = "Commit";
             this.Commit.UseVisualStyleBackColor = false;
+            this.Commit.Click += new System.EventHandler(this.Commit_Click);
             // 
             // Push
             // 
@@ -82,6 +83,7 @@ namespace Prueba.View
             this.Push.TabIndex = 4;
             this.Push.Text = "Push";
             this.Push.UseVisualStyleBackColor = false;
+            this.Push.Click += new System.EventHandler(this.Push_Click);
             // 
             // Pull
             // 
@@ -145,6 +147,7 @@ namespace Prueba.View
             this.StatusRR.TabIndex = 9;
             this.StatusRR.Text = "Estado Remote Repository";
             this.StatusRR.UseVisualStyleBackColor = false;
+            this.StatusRR.Click += new System.EventHandler(this.StatusRR_Click);
             // 
             // LabelRepo
             // 
