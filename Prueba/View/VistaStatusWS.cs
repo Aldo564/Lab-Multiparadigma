@@ -31,7 +31,7 @@ namespace Prueba.View
 
         private void VistaStatusWS_Load(object sender, EventArgs e)
         {
-            foreach(Archivo element in archivos)
+            foreach (Archivo element in archivos)
             {
                 ArchivosWS.Items.Add(element.nombre);
             }

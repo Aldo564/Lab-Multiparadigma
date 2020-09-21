@@ -1,12 +1,6 @@
 ﻿using Prueba.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Prueba.View
@@ -55,9 +49,9 @@ namespace Prueba.View
         {
             int i = 0;
             List<Object> items = new List<Object>();
-            foreach (Object item in ArchivosNoAgregados.Items) 
+            foreach (Object item in ArchivosNoAgregados.Items)
             {
-                if (ArchivosNoAgregados.GetItemChecked(i)) 
+                if (ArchivosNoAgregados.GetItemChecked(i))
                 {
                     ArchivosAgregados.Items.Add(item, true);
                     items.Add(item);
@@ -66,7 +60,7 @@ namespace Prueba.View
                 i++;
             }
 
-            foreach(Object item in items) 
+            foreach (Object item in items)
             {
                 ArchivosNoAgregados.Items.Remove(item);
             }

@@ -24,9 +24,9 @@ namespace Prueba.Model
         // Salida: El repo de tipo Repositorio actualizado.
         internal Repositorio gitAdd(Repositorio repo, List<Object> items)
         {
-            foreach(Object item in items)
+            foreach (Object item in items)
             {
-                foreach (Archivo archivo in repo.zona.workSpace.archivos) 
+                foreach (Archivo archivo in repo.zona.workSpace.archivos)
                 {
                     if (archivo.nombre.Equals(item.ToString()))
                     {
@@ -101,11 +101,11 @@ namespace Prueba.Model
             List<String> cambios = new List<string>();
 
             List<Archivo> copia_Archivos_Index = repo.zona.index.commit.archivos;
-            
 
-            if (repo.zona.localRepo.commits.Count == 0) 
+
+            if (repo.zona.localRepo.commits.Count == 0)
             {
-                foreach(Archivo archivo in copia_Archivos_Index) 
+                foreach (Archivo archivo in copia_Archivos_Index)
                 {
                     aux = "\0"; // reset para que no exista basura dentro.
                     aux = agregar + archivo.nombre;
@@ -114,7 +114,7 @@ namespace Prueba.Model
 
                 return cambios;
             }
-            else 
+            else
             {
                 Commit ultimo_Commit_LocalRepo = repo.zona.localRepo.commits[repo.zona.localRepo.commits.Count - 1];
                 List<Archivo> copia_Archivos_LocalRepo = ultimo_Commit_LocalRepo.archivos;
@@ -128,12 +128,12 @@ namespace Prueba.Model
                 int k;  // Para Local Repository
 
                 // Busco las coincidencias en ambas listas y guardo los archivos que coinciden
-                foreach (Archivo archivoI in copia_Archivos_Index) 
+                foreach (Archivo archivoI in copia_Archivos_Index)
                 {
                     k = 0;
                     foreach (Archivo archivoLR in copia_Archivos_LocalRepo)
                     {
-                        if (archivoI.nombre.Equals(archivoLR.nombre)) 
+                        if (archivoI.nombre.Equals(archivoLR.nombre))
                         {
                             archivos_Comunes.Add(archivoI);
                             archivos_Comunes.Add(archivoLR);
@@ -154,17 +154,17 @@ namespace Prueba.Model
                 }
 
                 // Se compara el contenido de los archivos con el mismo nombre y se agrega el prefijo correspondiente a igual o modificado
-                for (int v = 0; v < (archivos_Comunes.Count / 2); v+=2)
+                for (int v = 0; v < (archivos_Comunes.Count / 2); v += 2)
                 {
-                    if (archivos_Comunes[v].nombre.Equals(archivos_Comunes[v+1].nombre)) 
+                    if (archivos_Comunes[v].nombre.Equals(archivos_Comunes[v + 1].nombre))
                     {
-                        if (archivos_Comunes[v].contenido.Equals(archivos_Comunes[v + 1].contenido)) 
+                        if (archivos_Comunes[v].contenido.Equals(archivos_Comunes[v + 1].contenido))
                         {
                             aux = "\0";
                             aux = igual + archivos_Comunes[v].nombre;
                             cambios.Add(aux);
                         }
-                        else 
+                        else
                         {
                             aux = "\0";
                             aux = modificar + archivos_Comunes[v].nombre;
@@ -177,7 +177,7 @@ namespace Prueba.Model
                 // podemos saber que los archivos nuevos son los que quedan en copia_Archivos_Index y los archivos eliminados son los
                 // que quedan en copia_Archivos_LocalRepo
 
-                foreach (Archivo archivo in copia_Archivos_Index) 
+                foreach (Archivo archivo in copia_Archivos_Index)
                 {
                     aux = "\0";
                     aux = agregar + archivo.nombre;

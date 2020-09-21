@@ -37,11 +37,11 @@ namespace Prueba.View
                 CommitsRR.Items.Add(element.nombre);
             }
 
-            if (estado) 
+            if (estado)
             {
                 Estado.Text = "Actualizado";
             }
-            else 
+            else
             {
                 Estado.Text = "No Actualizado";
             }

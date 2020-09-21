@@ -6,7 +6,7 @@ namespace Prueba.Model
 {
     class Main
     {
-        
+
         public Repositorio repositorio;
 
         // Funcion que inicializara el repositorio
@@ -16,12 +16,12 @@ namespace Prueba.Model
         {
             Repositorio repo = null;
 
-            if (nombreRepo.Equals("") || nombreAutor.Equals("")) 
+            if (nombreRepo.Equals("") || nombreAutor.Equals(""))
             {
                 MessageBox.Show("Porfavor complete todos los campos.");
                 repo = entrada_Datos("null", "null");
             }
-            else 
+            else
             {
                 repo = entrada_Datos(nombreRepo, nombreAutor);
             }

@@ -82,11 +82,11 @@ namespace Prueba.View
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if (ArchivosAgregados.Items.Count == 0) 
+            if (ArchivosAgregados.Items.Count == 0)
             {
                 MessageBox.Show("Debe agregar como minimo un archivo para generar un Commit");
             }
-            else 
+            else
             {
                 List<Object> items = new List<Object>();
                 foreach (Object item in ArchivosAgregados.Items)

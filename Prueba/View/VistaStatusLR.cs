@@ -45,7 +45,7 @@ namespace Prueba.View
         {
             Object item_Marcado = CommitsLR.SelectedItem;
 
-            if (item_Marcado != null) 
+            if (item_Marcado != null)
             {
                 List<Object> items = new List<Object>();
                 foreach (Object item in ArchivosCommit.Items)
@@ -69,9 +69,9 @@ namespace Prueba.View
                     }
                 }
             }
-            
 
-            
+
+
 
         }
     }

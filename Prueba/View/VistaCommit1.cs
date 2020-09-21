@@ -43,7 +43,7 @@ namespace Prueba.View
             {
                 MessageBox.Show("Rellene todos los campos para poder continuar");
             }
-            else 
+            else
             {
                 VistaCommit2 vista = new VistaCommit2();
                 vista.Repo = repo;

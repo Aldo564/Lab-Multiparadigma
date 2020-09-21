@@ -6,7 +6,7 @@ namespace Prueba.View
 {
     public partial class Vista2 : Form
     {
- 
+
 
         public Vista2()
         {
@@ -37,7 +37,7 @@ namespace Prueba.View
             Main main = new Main();
             Repositorio repo = main.gitInit(NombreRepo.Text, NombreAutor.Text);
 
-            if(!(repo.nombre.Equals("null") && repo.autor.Equals("null"))) 
+            if (!(repo.nombre.Equals("null") && repo.autor.Equals("null")))
             {
                 Vista3 vista = new Vista3();
                 vista.Repo = repo;

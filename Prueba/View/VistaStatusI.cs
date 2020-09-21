@@ -42,6 +42,6 @@ namespace Prueba.View
             this.Close();
         }
 
-        
+
     }
 }

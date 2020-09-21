@@ -11,7 +11,7 @@ namespace Prueba.View
         private const int CP_NOCLOSE_BUTTON = 0x200;
 
         private Repositorio repo;
-        
+
         public Vista3()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Prueba.View
             NombreAutor.Text = repo.autor;
             NombreRepo.Text = repo.nombre;
         }
-        
+
         protected override CreateParams CreateParams
         {
             get
@@ -52,7 +52,7 @@ namespace Prueba.View
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if (Repo.zona.workSpace.archivos.Count == 0) 
+            if (Repo.zona.workSpace.archivos.Count == 0)
             {
                 MessageBox.Show("Porfavor agrege archivos al Work Space antes de añadirlos a Index");
             }
@@ -64,12 +64,12 @@ namespace Prueba.View
                 vista.Show();
                 this.Hide();
             }
-            
+
         }
 
         private void Commit_Click(object sender, EventArgs e)
         {
-            if (repo.zona.index.archivos.Count != 0) 
+            if (repo.zona.index.archivos.Count != 0)
             {
                 VistaCommit1 vista = new VistaCommit1();
                 vista.Repo = repo;
@@ -77,16 +77,16 @@ namespace Prueba.View
                 vista.Show();
                 this.Hide();
             }
-            else 
+            else
             {
                 MessageBox.Show("No existen Archivos en el Index");
             }
-            
+
         }
 
         private void Push_Click(object sender, EventArgs e)
         {
-            if (repo.zona.localRepo.commits.Count != 0) 
+            if (repo.zona.localRepo.commits.Count != 0)
             {
                 repo.zona.remoteRepo.commits.Clear();
                 foreach (Commit commit in repo.zona.localRepo.commits)
@@ -106,7 +106,7 @@ namespace Prueba.View
 
         private void Pull_Click(object sender, EventArgs e)
         {
-            if (repo.zona.remoteRepo.commits.Count != 0) 
+            if (repo.zona.remoteRepo.commits.Count != 0)
             {
                 List<Archivo> archivos_RR = repo.zona.remoteRepo.commits[repo.zona.remoteRepo.commits.Count - 1].archivos;
                 List<Archivo> archivos_WS = repo.zona.workSpace.archivos;
@@ -118,11 +118,11 @@ namespace Prueba.View
 
                 MessageBox.Show("Proceso exitoso");
             }
-            else 
+            else
             {
                 MessageBox.Show("No existen Commits en el Remote Repository");
             }
-            
+
         }
 
         private void StatusWS_Click(object sender, EventArgs e)
