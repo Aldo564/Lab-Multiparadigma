@@ -1,12 +1,5 @@
 ﻿using Prueba.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Prueba.View
@@ -35,7 +28,11 @@ namespace Prueba.View
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Vista3 vista = new Vista3();
+            vista.Repo = repo;
+            vista.Show();
+            this.Hide();
+
         }
 
         private void crear_Click(object sender, EventArgs e)
